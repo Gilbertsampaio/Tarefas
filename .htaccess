@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine On
+
+ErrorDocument 404 https://www.gmeloweb.com.br/tarefas/404
+
+RewriteRule ^add\/?$ add.php
+RewriteRule ^editar\/([a-z,0-9,A-Z,_-]+)\/?$ editar.php?ID=$1
+RewriteRule ^tarefas\/?$ tarefas.php
+RewriteRule ^404\/?$ 404.php
