@@ -19,8 +19,8 @@ while($ln = mysqli_fetch_object($sql)):
   	<td><?php if($ln->prioridade == '1'){ echo 'Baixa';} else if($ln->prioridade == '2'){ echo 'Média';} else if($ln->prioridade == '3'){ echo 'Alta';}?></td>
   	<td><?php if($ln->estado == '1'){ echo 'Pendente';} else if($ln->estado == '2'){ echo 'Em andamento';} else if($ln->estado == '3'){ echo 'Concluído';}?></td>
   	<td><?php echo $ln->tarefa; ?></td>
-  	<td class="center"><a class="button button-blue" data-toggle="tooltip" data-original-title="Editar registro" href="editar/<?php echo $ln->ID; ?>"><i class="icon-edit"></i></a></td>
-  	<td class="center"><button class="button button-red deletar" data-id="<?php echo $ln->ID; ?>" data-toggle="tooltip" data-original-title="Excluir registro"><i class="icon-trash"></i></button></td>
+  	<td class="center"><a class="button button-blue button-small" href="editar/<?php echo $ln->ID; ?>"><i class="icon-pencil-alt"></i> Editar</a></td>
+  	<td class="center"><button class="button button-red button-small deletar" data-id="<?php echo $ln->ID; ?>"><i class="icon-trash-alt1"></i> Excluir</button></td>
 </tr>
 <?php endwhile ?>  
 <?php } else if(mysqli_num_rows($sql) == false){?>

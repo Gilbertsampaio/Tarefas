@@ -99,8 +99,8 @@ while($ln = mysqli_fetch_object($sql)) {
 											</div>
 										</div>
 										<div class="col-12">
-											<button type="submit" id="cadastrar" name="cadastrar" class="btn btn-secondary">Cadastrar</button>
-											<a href="<?php echo $url; ?>/" class="btn btn-primary">Ver Tarefas</a>
+											<button type="submit" id="cadastrar" name="cadastrar" class="button button-blue button-small"><i class="icon-save"></i> Cadastrar</button>
+											<a href="<?php echo $url; ?>/" class="button button-green button-small"><i class="icon-wrench"></i> Ver Tarefas</a>
 										</div>
 									</form>
 								</div>

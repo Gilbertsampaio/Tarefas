@@ -10,11 +10,11 @@ session_start();
 	<?php include 'inc/ceo.php'; ?>
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $url; ?>/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $url; ?>/style.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $url; ?>/css/font-icons.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<script src="js/jquery.js"></script>
+	<script src="<?php echo $url; ?>/js/jquery.js"></script>
 	<title>Sistema de Tarefas - Sua Empresa</title>
 
 </head>
@@ -44,7 +44,7 @@ session_start();
 									  <thead>
 									  	<tr>
 										  <th colspan="8">
-										  	<a class="button button-green pull-right" data-toggle="tooltip" data-original-title="Adicionar registro" href="add"><i class="icon-trash"></i></a>
+										  	<a class="button button-green button-small" href="add"><i class="icon-plus"></i> Adicionar Tarefa</a>
 										  </th>
 										</tr>
 										<tr>
