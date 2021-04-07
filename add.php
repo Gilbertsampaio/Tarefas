@@ -23,7 +23,7 @@ if(isset($_POST["cadastrar"])){
 
 		$sql = mysqli_query($connect,"INSERT INTO tarefas (data, usuario, prioridade, estado, tarefa) VALUES ('$data', '$usuario', '$prioridade', '$estado', '$tarefa')");
 		
-		echo '<script language="JavaScript">window.location="'.$url.'/tarefas.php";</script>';
+		echo '<script language="JavaScript">window.location="'.$url.'/";</script>';
 		$_SESSION['success_msg'] = "<script> var segundos = 5; setTimeout(function(){ $('#add-ok').fadeOut();}, segundos*1000)</script><div id='add-ok' style='color:#00e676'><span style='font-weight:bold'> As Informações da tarefa</span> foram cadastradas com sucesso!</div>";
 	}
 }
@@ -100,7 +100,7 @@ while($ln = mysqli_fetch_object($sql)) {
 										</div>
 										<div class="col-12">
 											<button type="submit" id="cadastrar" name="cadastrar" class="btn btn-secondary">Cadastrar</button>
-											<a href="<?php echo $url; ?>/tarefas" class="btn btn-primary">Ver Tarefas</a>
+											<a href="<?php echo $url; ?>/" class="btn btn-primary">Ver Tarefas</a>
 										</div>
 									</form>
 								</div>

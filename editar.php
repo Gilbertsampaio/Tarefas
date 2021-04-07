@@ -28,7 +28,7 @@ if(isset($_POST["salvar"])){
 
 		mysqli_query($connect,"UPDATE tarefas SET usuario = '$usuario', prioridade = '$prioridade', estado = '$estado', tarefa = '$tarefa' WHERE ID = '$ID'");
 		
-		echo '<script language="JavaScript">window.location="'.$url.'/tarefas";</script>';
+		echo '<script language="JavaScript">window.location="'.$url.'/";</script>';
 		$_SESSION['success_msg'] = "<script> var segundos = 5; setTimeout(function(){ $('#add-ok').fadeOut();}, segundos*1000)</script><div id='add-ok' style='color:#00e676'><span style='font-weight:bold'> As Informações</span> foram alteradas com sucesso!</div>";
 	}
 }
@@ -116,7 +116,7 @@ while($ln = mysqli_fetch_object($sql)) {
 										<input type="hidden" id="user" name="user" value="<?php echo $lnEdit->usuario; ?>">
 										<div class="col-12">
 											<button type="submit" id="salvar" name="salvar" class="btn btn-secondary">Editar</button>
-											<a href="<?php echo $url; ?>/tarefas" class="btn btn-primary">Ver Tarefas</a>
+											<a href="<?php echo $url; ?>/" class="btn btn-primary">Ver Tarefas</a>
 										</div>
 									</form>
 								</div>
