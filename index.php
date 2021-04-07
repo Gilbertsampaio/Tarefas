@@ -14,7 +14,9 @@ session_start();
 	<link rel="stylesheet" href="<?php echo $url; ?>/style.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $url; ?>/css/font-icons.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<script src="<?php echo $url; ?>/js/jquery.js"></script>
+	<link href="<?php echo $url; ?>/css/perfect-scrollbar.css" rel="stylesheet">
+    <script src="<?php echo $url; ?>/js/jquery.min.js" type="text/javascript" ></script>
+    <script src="<?php echo $url; ?>/js/perfect-scrollbar.js"></script>
 	<title>Sistema de Tarefas - Sua Empresa</title>
 
 </head>
@@ -39,27 +41,28 @@ session_start();
 <?php unset($_SESSION['success_msg']); } ?> 
 
 									<p class="alerta">Esse sistema visa administrar todas as informações sobre as tarefas da empresa, podemos inserir, visualizar, editar e excluir tarefas.</p>
-
-									<table class="table table-bordered table-striped">
-									  <thead>
-									  	<tr>
-										  <th colspan="8">
-										  	<a class="button button-green button-small" href="add"><i class="icon-plus"></i> Adicionar Tarefa</a>
-										  </th>
-										</tr>
-										<tr>
-										  <th>ID</th>
-										  <th>Data</th>
-										  <th>Usuário</th>
-										  <th>Prioridade</th>
-										  <th>Estado</th>
-										  <th>Tarefa</th>
-										  <th class="center">Editar</th>
-										  <th class="center">Excluir</th>
-										</tr>
-									  </thead>
-									  <tbody id="tabela"></tbody>
-									</table>
+									<div id="container">
+										<table class="table table-bordered table-striped">
+										  <thead>
+										  	<tr>
+											  <th colspan="8">
+											  	<a class="button button-green button-small" href="add"><i class="icon-plus"></i> Adicionar Tarefa</a>
+											  </th>
+											</tr>
+											<tr>
+											  <th>ID</th>
+											  <th>Data</th>
+											  <th>Usuário</th>
+											  <th>Prioridade</th>
+											  <th>Estado</th>
+											  <th>Tarefa</th>
+											  <th class="center">Editar</th>
+											  <th class="center">Excluir</th>
+											</tr>
+										  </thead>
+										  <tbody id="tabela"></tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -68,7 +71,20 @@ session_start();
 			</div>
 		</section>
 	</div>
+<script>
+	var $ = document.querySelector.bind(document);
+    var ps = new PerfectScrollbar('#container');
 
+    function updateSize() {
+      var width = parseInt($('#width').value, 10);
+      var height = parseInt($('#height').value, 10);
+
+      $('#container').style.width = width + 'px';
+      $('#container').style.height = height + 'px';
+
+      ps.update();
+    }
+</script>
 <script src="js/jquery.js"></script>
 <script src="js/functions.js"></script>
 <script>
